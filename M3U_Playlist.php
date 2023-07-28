@@ -23,8 +23,8 @@ function generateM3UFromFolder($folderPath)
             $extension = pathinfo($file, PATHINFO_EXTENSION);
             if (in_array($extension, ['avi', 'ogg', 'mp4', 'mkv'])) {
                 $title = str_replace("<Full Path of fs starting folder>", "", $filePath);
-				        $title = replaceChars($title, array(" ", ",", ":", ";", "|", "#"), "_");				
-				        $urlPath = str_replace("<Base fs starting folder>", "https://www.spltek.com", $filePath);
+		$title = replaceChars($title, array(" ", ",", ":", ";", "|", "#"), "_");				
+		$urlPath = str_replace("<Base fs starting folder>", "https://www.spltek.com", $filePath);
                 
                 $m3uContent .= "#EXTINF:-1,$title\n";
                 $m3uContent .= "$urlPath\n";
